@@ -18,5 +18,57 @@
     …or push an existing repository from the command line 
         git remote add origin https://github.com/leyhuong/test.git 
         git push -u origin master
+    
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$ echo "# test" >> README.md
+
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$ git add .
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory.
+
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$ git commit -m "first commit"
+[master (root-commit) cfc8698] first commit
+ 2 files changed, 23 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 test.html
+
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$ git remote add origin git@github.com:leyhuong/test.git
+
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$ git push -u origin master
+ERROR: Permission to leyhuong/test.git denied to prohle.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$ eval $(ssh-agent -s)
+Agent pid 20120
+
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$ ssh-add ~/.ssh/id_rsa_leyhuong_github
+Identity added: /c/Users/leyen/.ssh/id_rsa_leyhuong_github (/c/Users/leyen/.ssh/id_rsa_leyhuong_github)
+
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$ git push -u origin master
+Counting objects: 4, done.
+Delta compression using up to 12 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 621 bytes | 621.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/leyhuong/test/pull/new/master
+remote:
+To github.com:leyhuong/test.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+leyen@DESKTOP-KDQAAGO MINGW64 /d/leyhuong_test2 (master)
+$        
 </body>
 </html>
